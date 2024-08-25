@@ -1,0 +1,136 @@
+/* Variables */
+:root {
+    --clr-orange: hsl(31, 77%, 52%);
+    --clr-dark-cyan: hsl(184, 100%, 22%);
+    --clr-vdark-cyan: hsl(179, 100%, 13%);
+    --clr-paragraph: hsla(0, 0%, 100%, 0.75);
+    --clr-light-grey: hsl(0, 0%, 95%);
+}
+
+/* Reset HTML */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Font */
+@font-face {
+    font-family: 'Big Shoulder Display';
+    src: url(./font/Big_Shoulder_Display/BigShouldersDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Lexend Deca';
+    src: url(./font/Lexend_Deca/LexendDeca-VariableFont_wght.ttf);
+}
+
+/* General Style */
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    color: var(--clr-light-grey)
+}
+
+.col {
+    padding: 2rem 1.5rem 1rem 2rem;
+}
+
+img {
+    width: 40px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Big Shoulder Display', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    color: var(--clr-paragraph);
+}
+
+button {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+
+/* Layout */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 620px;
+}
+
+.col-1 {
+    background-color: var(--clr-orange);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.col-1 button {
+    color: var(--clr-orange)
+}
+
+.col-2 {
+    background-color: var(--clr-dark-cyan);
+}
+
+.col-2 button {
+    color: var(--clr-dark-cyan)
+}
+
+.col-3 {
+    background-color: var(--clr-vdark-cyan);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.col-3 button {
+    color: var(--clr-vdark-cyan)
+}
+
+button:hover, button:focus {
+    background: none;
+    cursor: pointer;
+    color: white;
+    outline: 2px solid white;
+}
+
+/* Reponsive */
+@media screen and (max-width: 497px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        max-width: 270px;
+        margin: 1rem 0
+    }
+
+    h1 {
+        margin: 1rem 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+    
+    .col-1 {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .col-3 {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
